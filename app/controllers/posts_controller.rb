@@ -43,7 +43,7 @@ class PostsController < ApplicationController
     @post = Post.new(params[:post])
 
     respond_to do |format|
-      if @post.save
+      if @post.save(params)
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
         format.json { render json: @post, status: :created, location: @post }
       else
@@ -57,9 +57,9 @@ class PostsController < ApplicationController
   # PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
-
+    
     respond_to do |format|
-      if @post.update_attributes(params[:post])
+      if @post.update_attributes(params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else
@@ -73,7 +73,7 @@ class PostsController < ApplicationController
   # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
-    @post.destroy
+    @post.destroy(params)
 
     respond_to do |format|
       format.html { redirect_to posts_url }

@@ -36,3 +36,10 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'rest-client'
+gem 'oj'
+
+group :production do
+  gem 'pg'
+end
