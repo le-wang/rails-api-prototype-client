@@ -1,4 +1,4 @@
 site:
   development: "http://localhost:3000"
   test: "http://localhost:3000"
-  production: "http://rails-api-prototype-server.heroku.com"
+  production: "http://rails-api-prototype-server.herokuapp.com"
